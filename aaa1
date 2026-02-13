@@ -1,0 +1,30 @@
+<?php
+// Desabilita MSG de erro
+ini_set('display_errors','off');
+
+include "php/helloworld.php"
+ ?>
+
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Include e Requite no PHP</title>
+</head>
+<body>
+   <?php 
+    // Include: ele gera um erro mas o script continua rodando.
+    // Caminho relativo: 
+    require "helloworld.php";
+    //Caminho Absoluto: 
+    require "C:/xampp/htdocs/teste/helloworld.php";
+ ?>
+</body>
+</html>
+
+
+<?php 
+     echo'<p>Hello World</p>'; 
+?>
