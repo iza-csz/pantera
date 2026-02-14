@@ -1,0 +1,44 @@
+<?php
+echo nl2br('Importação ok');
+
+/*
+Diferença entre " " e ' '
+" " - permite trabalhar com conteúdo/valor araamazenado na 
+variável.
+' ' entende que sera digitado um texto. */
+$nome = "ETEC";
+$sobrenome = "Antonio";
+$sobrenome1 = "Devisat";
+$nome_completo = 'Escola -->' . '$nome $sobrenome $sobrenome1';
+$nome_completo1 = 'Escola -->' . "$nome $sobrenome $sobrenome1";
+
+echo 'Utilizando (aspas simples): ' . $nome_completo;
+
+echo nl2br("\n"  . 'Utilizando (aspas dupla): ' . $nome_completo1);
+ ?>
+
+<?php
+// Desabilita MSG de erro
+ini_set('display_errors','off');
+
+include "php/inclusao.php"
+ ?>
+
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Include e Requite no PHP</title>
+</head>
+<body>
+   <?php 
+    // Include: ele gera um erro mas o script continua rodando.
+    // Caminho relativo: 
+    require "helloworld.php";
+    //Caminho Absoluto: 
+    require "C:/xampp/htdocs/teste/helloworld.php";
+ ?>
+</body>
+</html>
