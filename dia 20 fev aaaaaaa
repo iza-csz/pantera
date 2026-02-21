@@ -1,0 +1,8 @@
+<?php
+    $tempo_trabalho = 24;
+    $idade = 66;
+             if( $idade > 65 || $tempo_trabalho >= 25){
+                 echo 'Aposentadoria !';
+             } else{
+                 echo 'nao aposenta';
+             }
