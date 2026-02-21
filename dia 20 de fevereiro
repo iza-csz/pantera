@@ -1,0 +1,16 @@
+<?php
+$compra = 500;
+$saldo = 400;
+$tem_cheque_especial = false;
+
+if ( $compra >= $saldo && $item_cheque_especial == false ){
+    print 'compra negada';
+}
+?>
+
+<?php
+    $tempo_trabalho = 24;
+    $idade = 66;
+             if( $idade > 65 || $tempo_trabalho >= 25){
+                 echo 'Aposentadoria !';
+             }
