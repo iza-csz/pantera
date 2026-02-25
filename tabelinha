@@ -1,0 +1,39 @@
+CREATE TABLE tbclientes (
+    id_clientes INT PRIMARY KEY AUTO_INCREMENT,
+    nome_clientes VARCHAR(100) NOT NULL,
+    email_clientes VARCHAR(200) NOT NULL UNIQUE,
+    telefone_clientes VARCHAR(20),
+    cidade_clientes VARCHAR(50)
+);
+
+-- TABELA PRODUTOS
+CREATE TABLE tbproduto (
+    id_produto INT PRIMARY KEY AUTO_INCREMENT,
+    nome_produto VARCHAR(100) NOT NULL,
+    descricao_produto TEXT,
+    preco_produto DECIMAL(10,2) NOT NULL,
+    estoque_produto INT NOT NULL
+);
+
+-- TABELA PEDIDOS
+CREATE TABLE tbpedidos (
+    id_pedido INT PRIMARY KEY AUTO_INCREMENT,
+    id_cliente INT,
+    data_pedido DATE NOT NULL,
+    valor_total DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (id_cliente)
+        REFERENCES tbclientes(id_clientes)
+);
+
+-- TABELA ITENS DO PEDIDO
+CREATE TABLE tbitens_pedido (
+    id_item INT PRIMARY KEY AUTO_INCREMENT,
+    id_pedido INT,
+    id_produto INT,
+    quantidade INT NOT NULL,
+    preco_unitario DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (id_pedido)
+        REFERENCES tbpedidos(id_pedido),
+    FOREIGN KEY (id_produto)
+        REFERENCES tbproduto(id_produto)
+);
