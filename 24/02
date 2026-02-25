@@ -1,0 +1,10 @@
+<?php
+$numero = -4;
+
+if ($numero > 0){
+    echo "O numero e positivo.";
+} elseif ($numero < 0) {
+    echo " O número é negativo.";
+} else {
+    echo "o numero é zero.";
+}
