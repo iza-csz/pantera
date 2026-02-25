@@ -1,0 +1,11 @@
+<?php
+    $ano = 2023;
+    $mes = 2;
+    $dias = 0;
+
+    $dias = ($mes == 2)
+        ? (($ano % 4 == 0 && $ano % 100 != 0) || ($ano % 400 == 0) ? 29 : 28)
+        : (($mes - 1) % 7 % 2 == 0 ? 31 : 30);
+
+    echo "O número de dias em $mes/$ano é: $dias";
+?>
